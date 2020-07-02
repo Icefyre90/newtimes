@@ -1,3 +1,5 @@
+
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,19 +16,20 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
-  <link href="../assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+  <link rel = "stylesheet" href = "{{ asset('css/material-dashboard.css') }}" >
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link rel = "stylesheet" href = "{{ asset('css/demo.css') }}" >
 </head>
 <body class="dark-edition">
   <div class="wrapper ">
 
-  <!--   @include('adminsidebar')<br/> -->
-    @include('adminnav')<br/>
+    @include('admintamp.adminsidebar')<br/>
+    <div class="main-panel">
+    @include('admintamp.adminnav')<br/>
 
             @yield('content')
 
-   @include('adminfooter')<br/>
+   @include('admintamp.adminfooter')<br/>
 
 
    <script>
@@ -58,22 +61,22 @@
         <li class="header-title">Images</li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../assets/img/sidebar-1.jpg" alt="">
+            <img src="{{ asset('img/sidebar-1.jpg') }}" alt="">
           </a>
         </li>
         <li class="active">
           <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../assets/img/sidebar-2.jpg" alt="">
+            <img src="{{ asset('img/sidebar-2.jpg') }}" alt="">
           </a>
         </li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../assets/img/sidebar-3.jpg" alt="">
+            <img src="{{ asset('img/sidebar-3.jpg') }}" alt="">
           </a>
         </li>
         <li>
           <a class="img-holder switch-trigger" href="javascript:void(0)">
-            <img src="../assets/img/sidebar-4.jpg" alt="">
+            <img src="{{ asset('img/sidebar-4.jpg') }}" alt="">
           </a>
         </li>
         <li class="button-container">
@@ -104,23 +107,37 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="../assets/js/core/jquery.min.js"></script>
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap-material-design.min.js"></script>
+  <script src="{{  asset('js/jquery.min.js' )}}"></script>
+ <!--  <script src="../assets/js/core/jquery.min.js"></script> -->
+ <!--  <script src="../assets/js/core/popper.min.js"></script> -->
+  <script src="{{  asset('js/popper.min.js' )}}"></script>
+  <script src="{{  asset('js/bootstrap-material-design.min.js' )}}"></script>
+  <script src="{{  asset('js/bootstrap-material-design.min.js' )}}"></script>
+  <script src="{{  asset('js/perfect-scrollbar.jquery.min.js' )}}"></script>
+
+
   <script src="https://unpkg.com/default-passive-events"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+ <!--  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script> -->
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chartist JS -->
-  <script src="../assets/js/plugins/chartist.min.js"></script>
+  <script src="{{  asset('js/chartist.min.js' )}}"></script>
+
+  <!-- <script src="../assets/js/plugins/chartist.min.js"></script> -->
   <!--  Notifications Plugin    -->
-  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="{{  asset('js/bootstrap-notify.js' )}}"></script>
+
+  <!-- <script src="../assets/js/plugins/bootstrap-notify.js"></script> -->
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/material-dashboard.js?v=2.1.0"></script>
+  <script src="{{  asset('js/material-dashboard.js' )}}"></script>
+
+  <!-- <script src="../assets/js/material-dashboard.js?v=2.1.0"></script> -->
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../assets/demo/demo.js"></script>
+  <script src="{{  asset('js/demo.js' )}}"></script>
+
+<!--   <script src="../assets/demo/demo.js"></script> -->
   <script>
     $(document).ready(function() {
       $().ready(function() {

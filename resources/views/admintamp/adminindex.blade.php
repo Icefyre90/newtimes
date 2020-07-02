@@ -1,5 +1,5 @@
 
-@extends('admindash')
+@extends('admintamp.admindash')
 @section('content')
 
 <div class="content">

@@ -13,10 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admintamp/admindash');
-});
-
+/*Route::get('/', function () {
+    return view('AdminController@index');
+   
+});*/
+ Route::get('/', 'AdminController@index')->name('HOME');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::group(['middleware' => ['auth', 'admin']], function() {
+	 Route::get('/admin', 'AdminController@index')->name('HOME');
+
+
+	});

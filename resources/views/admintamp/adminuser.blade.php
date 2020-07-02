@@ -1,5 +1,5 @@
 
-@extends('admindash')
+@extends('admintamp.admindash')
 @section('content')
 
 
@@ -97,7 +97,7 @@
               <div class="card card-profile">
                 <div class="card-avatar">
                   <a href="#pablo">
-                    <img class="img" src="../assets/img/faces/marc.jpg" />
+                    <img class="img" src="{{ asset('img/faces/marc.jpg') }}" />
                   </a>
                 </div>
                 <div class="card-body">
